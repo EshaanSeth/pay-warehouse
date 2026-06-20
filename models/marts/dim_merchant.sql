@@ -1,0 +1,9 @@
+with merchants as (
+    select * from {{ ref('stg_merchants') }}
+)
+
+select
+    merchant_id,
+    merchant_name,
+    category
+from merchants

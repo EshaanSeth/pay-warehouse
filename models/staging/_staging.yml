@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['SUCCESS', 'FAILED', 'PENDING']
+  - name: stg_merchants
+    columns:
+      - name: merchant_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_cards
+    columns:
+      - name: card_id
+        tests:
+          - unique
+          - not_null
