@@ -33,6 +33,8 @@ models:
   pay_warehouse:
     staging:
       +materialized: view
+    intermediate:
+      +materialized: view 
     marts:
       +materialized: table
       +schema: marts

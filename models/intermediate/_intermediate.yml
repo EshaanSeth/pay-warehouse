@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: int_card_txn_gaps
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null

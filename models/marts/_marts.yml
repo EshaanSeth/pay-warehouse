@@ -20,3 +20,15 @@ models:
               arguments:
                 to: ref('dim_merchant')
                 field: merchant_id
+  - name: fct_fraud_signals
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+      - name: is_rapid_fire
+        tests:
+          - not_null
+      - name: is_high_value
+        tests:
+          - not_null
